@@ -15,10 +15,15 @@ var app = app || {};
       "click":"renderCardPage"
     },
     renderCardPage:function(){
-      var cardPage = new app.CardPageView({
+      if(app.cardPage){
+        app.cardPage.close();
+        $("body").append("<div class='container store-display'></div>");
+      };
+
+      app.cardPage = new app.CardPageView({
         model:this.model
       });
-      cardPage.render();
+      app.cardPage.render();
       app.router.navigate('card-page/' + this.model.get("cardID"));
     },
     render:function(){

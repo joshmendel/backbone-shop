@@ -4,7 +4,7 @@
 
 .product-display{
   margin:0 auto;
-  width:80%;
+  width:70%;
   border:1px solid black;
 }
 
@@ -18,4 +18,42 @@
 .card-item{
   width:250px;
   margin:10px;
+}
+
+.user-panel{
+  position:fixed;
+  right:50px;
+  top:30px;
+  text-align: center;
+  width: 150px;
+  height:60px;
+  border:1px solid lightgrey;
+  box-shadow: 2px 2px 8px grey;
+}
+
+.shopping-cart{
+  position:relative;
+  top:15px;
+  font-size:35px;
+}
+
+.shopping-cart:hover{
+  color:grey;
+}
+
+.shopping-cart:active{
+  color:lightgrey;
+}
+
+.log-in-modal .modal-content{
+  text-align: center;
+}
+
+.log-in-modal input{
+  width:90%;
+}
+
+.log-in{
+  margin:10px auto;
+  display:block;
 }

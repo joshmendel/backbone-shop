@@ -19,14 +19,19 @@ var app = app || {};
 
             app.cards = new app.Cards();
 
-            for(var i=0; i < serverData.length;i++){
+            serverData.forEach(function(card){
+
+              var validEdition = _.find(card.editions,function(edition){
+                return edition.multiverse_id !==0;
+              });
+
               var cardModel = new app.CardModel({
-                cardID:serverData[i].id,
-                cardName:serverData[i].name,
-                imgLink:serverData[i].editions[0].image_url,
-                cardText:serverData[i].text,
-                flavorText:serverData[i].editions[0].flavor,
-                edition:serverData[i].editions[0].set
+                cardID:card.id,
+                cardName:card.name,
+                imgLink:validEdition.image_url,
+                cardText:card.text,
+                flavorText:validEdition.flavor,
+                edition:validEdition.set
               });
 
               app.cards.add(cardModel);
@@ -36,6 +41,8 @@ var app = app || {};
               });
 
               cardContainer.append(cardItemView.render().$el);
+            });
+            for(var i=0; i < serverData.length;i++){
             }
 
             $(".product-display").html(cardContainer);
