@@ -48,14 +48,6 @@ var app = app || {};
           flavorText:validEdition.flavor,
           edition:validEdition.set
         });
-        // cardModel.set({
-        //   cardID:cardInfo.id,
-        //   cardName:cardInfo.name,
-        //   imgLink:cardInfo.editions[0].image_url,
-        //   cardText:cardInfo.text,
-        //   flavorText:cardInfo.editions[0].flavor,
-        //   edition:cardInfo.editions[0].set
-        // });
       },function(err){
         console.log("404 error: ",err);
       });

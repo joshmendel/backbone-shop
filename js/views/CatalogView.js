@@ -4,7 +4,7 @@ var app = app || {};
 (function(){
   app.CatalogView = Backbone.View.extend({
     el:".store-display",
-    template:_.template('<h1>beach coders store</h1><input placeholder="look for cards..." class="card-search" type="text"><div class="product-display"></div>'),
+    template:_.template('<h1>my sample store</h1><input placeholder="look for cards..." class="card-search" type="text"><div class="product-display"></div>'),
     events:{
       "keydown .card-search":"cardSearch"
     },
@@ -42,6 +42,7 @@ var app = app || {};
 
               cardContainer.append(cardItemView.render().$el);
             });
+
             for(var i=0; i < serverData.length;i++){
             }
 

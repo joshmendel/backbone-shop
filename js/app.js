@@ -5,6 +5,5 @@ var app = app || {};
   app.firebase = new Firebase("https://my-bb-shop.firebaseio.com/")
   app.router = new app.Router();
   Backbone.history.start();
-  // var catalogView = new app.CatalogView;
-  // catalogView.render();
+    
 }())
